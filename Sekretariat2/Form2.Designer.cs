@@ -94,6 +94,7 @@
             // 
             // comboBoxRegex
             // 
+            this.comboBoxRegex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRegex.FormattingEnabled = true;
             this.comboBoxRegex.Items.AddRange(new object[] {
             "",
@@ -106,6 +107,7 @@
             // 
             // comboBoxField
             // 
+            this.comboBoxField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxField.FormattingEnabled = true;
             this.comboBoxField.Items.AddRange(new object[] {
             "",
