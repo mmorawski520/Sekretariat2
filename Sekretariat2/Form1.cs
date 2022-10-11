@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,53 @@ namespace Sekretariat2
         public Sekretariat()
         {
             InitializeComponent();
+
+            /*String path = @".\uczniowie.txt";
+            String db = "server=s217-pc01;database=szkolna";
+            String query = "select * from szkolna.nauczyciele";
+
+            SqlConnection con = new SqlConnection(db);
+
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+
+            DataSet ds = new DataSet();
+
+            MessageBox.Show("connect with sql server");
+
+            con.Close();*/
+            try
+
+            {
+
+                String str = "Data Source=s217-pc01\\SQLEXPRESS2019;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+                String query = "select * from szkolna.dbo.nauczyciele";
+
+                SqlConnection con = new SqlConnection(str);
+
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                con.Open();
+
+                DataSet ds = new DataSet();
+
+                MessageBox.Show((string)cmd.ExecuteScalar());
+
+                con.Close();
+
+            }
+
+            catch (Exception es)
+
+            {
+
+                MessageBox.Show(es.Message);
+
+
+
+            }
             this.setCaptcha();
         }
 
